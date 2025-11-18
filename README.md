@@ -67,6 +67,8 @@
 
 ## 🏃 Quick Start
 
+> **⚡ Want step-by-step instructions?** See [QUICKSTART.md](QUICKSTART.md) for the complete guide!
+
 ### Option 1: Demo Mode (No API Key Needed!)
 
 ```bash
@@ -311,8 +313,19 @@ vercel --prod
 
 ## 📚 Documentation
 
-- **[ROADMAP.md](./ROADMAP.md)** - Production roadmap & architecture
+### Getting Started
+- **[QUICKSTART.md](./QUICKSTART.md)** ⚡ - Get running in 2 minutes!
+- **[INSTALLATION.md](./INSTALLATION.md)** - Detailed installation guide
+- **[CONTRIBUTING.md](./CONTRIBUTING.md)** - How to contribute
+
+### Deployment & Planning
 - **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Complete deployment guide
+- **[ROADMAP.md](./ROADMAP.md)** - Production roadmap & architecture
+- **[PROJECT_SUMMARY.md](./PROJECT_SUMMARY.md)** - Project statistics & overview
+
+### Development Tools
+- **[scripts/README.md](./scripts/README.md)** - Helper scripts documentation
+- **[scripts/pre-deploy-checklist.md](./scripts/pre-deploy-checklist.md)** - Deployment checklist
 - **[variant-*/README.md](./variant-a-medieval/README.md)** - Variant-specific docs
 
 ---

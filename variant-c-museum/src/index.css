@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-white text-museum-navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* Museum card style */
+.museum-card {
+  @apply bg-white border border-museum-border shadow-museum;
+  transition: all 0.3s ease;
+}
+
+.museum-card:hover {
+  @apply shadow-museum-lg border-museum-gold;
+}
+
+/* Educational fact box */
+.fact-box {
+  @apply bg-museum-cream border-l-4 border-museum-gold p-4 my-4;
+}
+
+.fact-box::before {
+  content: '💡';
+  margin-right: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Historical timeline marker */
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  @apply bg-museum-gold rounded-full;
+  box-shadow: 0 0 0 4px rgba(201, 169, 97, 0.2);
+}
+
+/* Professional button style */
+.btn-museum {
+  @apply bg-museum-navy text-white px-6 py-3 font-medium transition-all duration-300;
+}
+
+.btn-museum:hover {
+  @apply bg-museum-blue;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Learning card with border */
+.learning-card {
+  @apply border-2 border-museum-border bg-white p-6;
+  position: relative;
+}
+
+.learning-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #1A2332, #C9A961, #1A2332);
+}
+
+/* Quote style */
+.historical-quote {
+  @apply italic text-museum-gray border-l-4 border-museum-gold pl-4 my-4;
+  font-family: 'Playfair Display', serif;
+}
+
+/* Stats display */
+.stat-badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 bg-museum-cream text-museum-navy font-mono text-sm;
+  border: 1px solid #museum-border;
+}

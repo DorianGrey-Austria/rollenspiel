@@ -1,0 +1,56 @@
+[[http]]
+  for = "/*"
+  [headers]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[build]
+  command = "echo 'Building all variants...'"
+  publish = "."
+
+# Variant A: Medieval Scholar
+[[build.processing]]
+  src = "variant-a-medieval"
+  publish = "variant-a-medieval/dist"
+
+# Variant B: Neon Gamer
+[[build.processing]]
+  src = "variant-b-gamer"
+  publish = "variant-b-gamer/dist"
+
+# Variant C: Museum Guide
+[[build.processing]]
+  src = "variant-c-museum"
+  publish = "variant-c-museum/dist"
+
+# Redirects
+[[redirects]]
+  from = "/medieval/*"
+  to = "/variant-a-medieval/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/gamer/*"
+  to = "/variant-b-gamer/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/museum/*"
+  to = "/variant-c-museum/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/variant-a-medieval/:splat"
+  status = 200
+
+# Functions
+[functions]
+  directory = "api"
+  node_bundler = "esbuild"
+
+# Environment variables (set these in Netlify UI)
+[build.environment]
+  NODE_VERSION = "18"

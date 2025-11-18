@@ -1,0 +1,54 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "variant-a-medieval/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "variant-b-gamer/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "variant-c-museum/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/medieval/(.*)",
+      "dest": "/variant-a-medieval/$1"
+    },
+    {
+      "src": "/gamer/(.*)",
+      "dest": "/variant-b-gamer/$1"
+    },
+    {
+      "src": "/museum/(.*)",
+      "dest": "/variant-c-museum/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/variant-a-medieval/$1"
+    }
+  ],
+  "env": {
+    "ANTHROPIC_API_KEY": "@anthropic-api-key"
+  },
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "nodejs18.x",
+      "memory": 1024,
+      "maxDuration": 30
+    }
+  }
+}

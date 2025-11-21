@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-dark text-white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Essential Card - Clean & Modern */
+.essential-card {
+  @apply bg-dark-lighter border border-dark-light rounded-xl p-6 transition-all duration-200;
+}
+
+.essential-card:hover {
+  @apply border-primary shadow-lg;
+  transform: translateY(-2px);
+}
+
+/* Button Styles */
+.btn-essential {
+  @apply bg-primary hover:bg-primary-dark text-white px-6 py-3 rounded-lg font-semibold transition-all duration-200;
+}
+
+.btn-essential:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.btn-essential:active {
+  transform: translateY(0);
+}
+
+/* Badge */
+.badge-essential {
+  @apply inline-flex items-center gap-2 px-3 py-1 bg-primary/20 text-primary rounded-full text-sm font-semibold;
+}
+
+/* Progress Bar - Simple & Clean */
+.progress-bar {
+  @apply w-full h-2 bg-dark-light rounded-full overflow-hidden;
+}
+
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-primary to-secondary rounded-full transition-all duration-500;
+}
+
+/* Stat Display */
+.stat-box {
+  @apply essential-card text-center;
+}
+
+.stat-value {
+  @apply text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+}
+
+/* Simple Animations - Guaranteed to work */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease-out;
+}
+
+/* Focus styles for accessibility */
+button:focus-visible,
+a:focus-visible {
+  @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-dark;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', sans-serif;
+  @apply bg-gradient-explorer text-white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Glass Morphism Card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  @apply rounded-2xl shadow-glass transition-all duration-300;
+}
+
+.glass-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(212, 175, 55, 0.5);
+  @apply shadow-glow;
+  transform: translateY(-2px);
+}
+
+/* Premium Button */
+.btn-explorer {
+  @apply relative overflow-hidden px-8 py-4 rounded-xl font-semibold text-white;
+  background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-explorer:hover {
+  box-shadow: 0 6px 25px rgba(59, 130, 246, 0.6);
+  transform: translateY(-2px);
+}
+
+.btn-explorer:active {
+  transform: translateY(0);
+}
+
+/* Achievement Badge */
+.achievement-badge {
+  @apply inline-flex items-center gap-2 px-4 py-2 rounded-full font-semibold;
+  background: linear-gradient(135deg, #D4AF37 0%, #F4C542 100%);
+  color: #0F172A;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Progress Bar */
+.progress-explorer {
+  @apply w-full h-3 rounded-full overflow-hidden;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.progress-explorer-fill {
+  @apply h-full rounded-full transition-all duration-500;
+  background: linear-gradient(90deg, #3B82F6 0%, #10B981 100%);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+}
+
+/* Timeline Marker */
+.timeline-marker {
+  @apply relative;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #D4AF37 0%, #F4C542 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2), 0 0 15px rgba(212, 175, 55, 0.5);
+  animation: pulse-slow 3s infinite;
+}
+
+/* Fact Box with Glassmorphism */
+.fact-box-explorer {
+  @apply glass-card p-6 my-4;
+  border-left: 4px solid #D4AF37;
+}
+
+.fact-box-explorer::before {
+  content: '✨';
+  font-size: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+/* Character Card */
+.character-card {
+  @apply glass-card p-6 relative overflow-hidden;
+}
+
+.character-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3B82F6, #D4AF37, #10B981);
+}
+
+/* Stats Display */
+.stat-display {
+  @apply glass-card p-4 text-center;
+}
+
+.stat-number {
+  @apply text-3xl font-bold font-mono;
+  background: linear-gradient(135deg, #3B82F6 0%, #D4AF37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glowing Border Animation */
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(59, 130, 246, 0.5); }
+  50% { border-color: rgba(212, 175, 55, 0.8); }
+}
+
+.border-glow-animate {
+  animation: border-glow 3s ease-in-out infinite;
+}
+
+/* Shimmer Effect for Loading */
+.shimmer {
+  background: linear-gradient(90deg,
+    rgba(255,255,255,0.05) 0%,
+    rgba(255,255,255,0.2) 50%,
+    rgba(255,255,255,0.05) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
